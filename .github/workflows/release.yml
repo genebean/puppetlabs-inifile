@@ -17,9 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.5'
+    - run: |
+        source /home/gene.liverman/.rvm/scripts/rvm
+        rvm use ruby-2.6.3
     - name: Litmus Parallel
       uses: puppetlabs/action-litmus_parallel@master
       with:
@@ -39,9 +39,9 @@ jobs:
           puppet_gem_version: ~> 5.0
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.5'
+    - run: |
+        source /home/gene.liverman/.rvm/scripts/rvm
+        rvm use ruby-2.6.3
     - name: Spec Tests
       uses: puppetlabs/action-litmus_spec@master
       with:
