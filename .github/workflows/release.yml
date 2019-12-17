@@ -17,6 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
     - name: Litmus Parallel
       uses: puppetlabs/action-litmus_parallel@master
       with:
@@ -36,6 +39,9 @@ jobs:
           puppet_gem_version: ~> 5.0
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
     - name: Spec Tests
       uses: puppetlabs/action-litmus_spec@master
       with:
